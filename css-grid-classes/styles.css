@@ -6,18 +6,18 @@
   display: flex;
 }
 .column-one-half{
-  width: 100%;
+  width: 50%;
 }
 .column-one-half img{
   width: 100%;
 }
 
 .column-one-third{
-  width: 100%;
+  width: calc(100% / 3);
 }
 
 .column-one-forth{
-  width: 100%;
+  width: 25%;
 }
 .column-one-forth img{
   width: 100%;
