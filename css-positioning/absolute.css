@@ -15,8 +15,8 @@
 .emoji {
   font-size: 3rem;
   position: absolute;
-  bottom: 13rem;
-  left: 14rem;
+  top: 1rem;
+  right: 1rem;
 
 }
 
@@ -30,7 +30,8 @@
   text-transform: uppercase;
 
   position: absolute;
-  top: 10rem;
+  bottom: 0.1rem;
+
 
 }
 
