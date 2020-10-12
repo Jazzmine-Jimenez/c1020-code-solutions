@@ -5,18 +5,18 @@
 
 .main-menu{
   display: flex;
+  padding-top: 2rem;
+}
+
+.main-menu img{
+  width: 10%;
 }
 
 .logo-canvas{
   display: flex;
   justify-content: flex-start;
-  width: 20%;
-}
+  padding-bottom: 2rem;
 
-h1{
-  font-family: 'Tiempos Headline';
-  color: rgb(63, 63, 139);
-  font-weight: lighter;
 }
 
 .main-menu-pages{
@@ -28,9 +28,10 @@ h1{
   font-weight: 600;
 }
 
-.page {
+.pages {
   padding-right: 3rem;
   color: lightgray;
+  font-weight: lighter;
 }
 
 .contact-us-button{
@@ -45,7 +46,6 @@ h1{
   width: 90%;
   background-image: url(images/hero.jpg);
   filter: grayscale(50%);
-  background-color: gray;
   background-size: 100%;
   margin: 5rem auto;
   padding: 5rem;
@@ -53,7 +53,6 @@ h1{
 
 .picture-block{
  width: 50%;
-
 }
 
 .picture-block h1{
@@ -73,15 +72,97 @@ h1{
 .get-started-button{
   background-color:  rgb(63, 63, 139);
   color: white;
-  padding: 1rem 3rem;
+  padding: 1rem 4rem;
   border: none;
   margin-top: 1.5rem;
   font-family: 'Avenir', sans-serif;
   font-size: 1.3rem;
 }
 
-.locations{
-  width: 40%;
+.locations-container{
+  background-color: whitesmoke;
   margin: 0;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  color: gray;
+  font-family: 'Avenir', sans-serif;
+}
 
+.locations-table-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+.locations-header{
+  text-align: center;
+}
+
+.column{
+  padding-left: 2rem;
+  padding-right: 2rem;
+  line-height: 3rem;
+}
+
+.locations-header-container > p{
+  line-height: 1.5rem;
+}
+
+.locations-header > h2{
+  font-weight: 700;
+  font-family: 'Tiempos Headline';
+  letter-spacing: 0.1rem;
+}
+
+.learn-more-container{
+  width: 80%;
+  margin-left: 5rem;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+}
+
+.learn-more-container h2, td{
+  color: gray;
+  font-family: 'Tiempos Headline', sans-serif;
+  margin-bottom: 2rem;
+
+}
+
+.product-company-container{
+  background-color: rgb(95, 95, 95);
+  color: white;
+  padding: 7rem 3rem;
+  display: flex;
+  justify-content: space-around;
+  font-family: 'Tiempos Headline', sans-serif;
+}
+
+.address-column > img{
+  width: 10rem;
+  padding-bottom: 2rem;
+}
+
+.learn-more-container > .get-started-button{
+  background-color:  rgb(63, 63, 139);
+  color: white;
+  padding: 0 4rem;
+  border: none;
+  margin-top: 1.5rem;
+  font-family: 'Avenir', sans-serif;
+  font-size: 1.3rem;
+}
+
+footer{
+  display: flex;
+  width: 100%;
+  color: gray;
+  background-color: whitesmoke;
+  padding: 2rem 0;
+}
+
+footer > p{
+  margin-left: 4rem;
 }
