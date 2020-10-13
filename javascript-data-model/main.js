@@ -28,7 +28,10 @@ var orderHistory = [
     returnByDate: 08052020,
     orderNumber: 11428755579059409
   },
+
   {
+    [
+    {
     name: "Gamecube Controller",
     type: "Super Smash Bros. Edition",
     by: "Nintendo Switch",
@@ -36,8 +39,8 @@ var orderHistory = [
     deliveredDate: 07052020,
     returnByDate: 08042020,
     orderNumber: 11328831772648248
-  },
-  {
+    },
+    {
     name: "The Art of Sql",
     type: "book",
     by: "Stephane Faroult",
@@ -45,6 +48,8 @@ var orderHistory = [
     deliveredDate: 07052020,
     returnByDate: 08042020,
     orderNumber: 11328831772648248
-  }
+    }
+    ]
 
+  },
 ];
