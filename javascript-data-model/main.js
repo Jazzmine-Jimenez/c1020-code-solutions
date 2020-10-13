@@ -2,6 +2,7 @@
 
 var orderHistory = [
   {
+    var order0 = [
     name: "JavaScript for impatient programmers",
     type: "book",
     by: "Rauschmayer, Dr. Axel",
@@ -9,8 +10,10 @@ var orderHistory = [
     deliveredDate: 08082020,
     returnByDate: 09072020,
     orderNumber: 11439416898772232
+    ]
   },
   {
+    var order1 = [
     name: "The Timeless Ways of Building",
     type: "book",
     by: "Alexander, Christopher",
@@ -18,8 +21,10 @@ var orderHistory = [
     deliveredDate: 07202020,
     returnByDate: 08192020,
     orderNumber: 11399842681280257
+    ]
   },
   {
+    var [
     name: "Gamecube Controller Adapter",
     type: "wii U or PC",
     by: "Super Smash Bros Switch",
@@ -27,6 +32,7 @@ var orderHistory = [
     deliveredDate: 07072020,
     returnByDate: 08052020,
     orderNumber: 11428755579059409
+    ]
   },
 
   {
