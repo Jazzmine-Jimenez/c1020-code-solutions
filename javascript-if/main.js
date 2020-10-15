@@ -9,59 +9,33 @@
 */
 
 function isUnderFive(number){
-  if (number < 5){
-    console.log("True");
-  }
-  else{
-    console.log("False");
-  }
+  var statement = number < 5
+    return statement;
 }
 
 function isEven(number){
-  if(number % 2 === 0){
-    console.log("True");
-  }
-  else{
-    console.log("False");
-  }
-
+  var statment = number % 2 === 0
+  return statment;
 }
 
 function startsWithJ(string){
-  if (string[0] === "J" ) {
-    console.log("True");
-  }
-  else {
-    console.log("False");
-  }
-
+  var statement = string[0] === "J"
+  return statement;
 }
 
 function isOldEnoughToDrink(person){
-  if (person.age >= 21) {
-    console.log("True");
-  }
-  else {
-    console.log("False");
-  }
+  var statement = person.age >= 21
+  return statement;
 }
 
 function isOldEnoughToDrive(person){
-  if (person.age >= 16) {
-    console.log("True");
-  }
-  else {
-    console.log("False");
-  }
+  var statement = person.age >= 16
+  return statement;
 }
 
 function isOldEnoughToDrinkAndDrive(person){
-  if (person.name === " ") {
-    console.log("True");
-  }
-  else {
-    console.log("False");
-  }
+  var statement = person.name === " "
+  return statement;
 }
 
 function categorizeAcidity(pH){
