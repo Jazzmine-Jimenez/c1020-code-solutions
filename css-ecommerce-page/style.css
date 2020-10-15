@@ -1,0 +1,46 @@
+.main-container{
+  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.main-container > h4{
+  text-align: center;
+}
+
+.row{
+  display: flex;
+}
+
+.row > img{
+  width: auto;
+}
+
+.column{
+ margin: 0.5rem;
+ font-size: smaller;
+}
+
+.column > img{
+  width: 10rem;
+}
+
+.column > p{
+  margin: 1rem 0;
+}
+
+#img-resize{
+  width: 11rem;
+}
+
+.grey-letter{
+  color: lightgray;
+}
+
+.highlight{
+  background-color: rgb(255, 255, 236);
+  font-weight: bold;
+}
+
+.bold{
+  font-weight: bold;
+}
