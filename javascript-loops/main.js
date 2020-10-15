@@ -11,11 +11,9 @@
    var numbers = [];
    var currentNumber = 1;
 
-   var i = 0
-   while(i < 10){
-     numbers[i] = currentNumber ;
+   while(currentNumber - 1 < 10){
+     numbers[currentNumber - 1] = currentNumber ;
     currentNumber = currentNumber + 1;
-    i++;
    }
    return numbers;
  }
@@ -24,11 +22,11 @@
    var evenNumbers = [];
    var currentNumber = 2;
 
-   var i = 0;
-   while(i < 10){
-    evenNumbers[i] = currentNumber;
-    currentNumber += 2;
-    i++;
+
+   while(currentNumber < 20){
+    evenNumbers.push(currentNumber)
+    currentNumber += 2
+
    }
    return evenNumbers;
  }
@@ -63,7 +61,7 @@ function getKeys(object){
 
   var i = 0;
   for(var prop in object){
-
+    keys.push()
     keys[i] = prop;
     i++;
   }
