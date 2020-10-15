@@ -34,8 +34,7 @@ function isOldEnoughToDrive(person){
 }
 
 function isOldEnoughToDrinkAndDrive(person){
-  var statement = person.name === " "
-  return statement;
+  return false;
 }
 
 function categorizeAcidity(pH){
