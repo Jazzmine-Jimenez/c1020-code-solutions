@@ -23,7 +23,7 @@
    var currentNumber = 2;
 
 
-   while(currentNumber < 20){
+   while(currentNumber <= 20){
     evenNumbers.push(currentNumber)
     currentNumber += 2
 
@@ -61,8 +61,7 @@ function getKeys(object){
 
   var i = 0;
   for(var prop in object){
-    keys.push()
-    keys[i] = prop;
+    keys.push(prop);
     i++;
   }
   return keys;
@@ -73,7 +72,7 @@ function getValues(object){
 
   var i = 0;
   for(var key in object){
-    values[i] = object[key] ;
+    values.push(object[key]);
     i++
   }
   return values;
