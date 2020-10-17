@@ -12,8 +12,8 @@
    var currentNumber = 1;
 
    while(currentNumber - 1 < 10){
-     numbers[currentNumber - 1] = currentNumber ;
-    currentNumber = currentNumber + 1;
+    numbers.push(currentNumber);
+    currentNumber += 1;
    }
    return numbers;
  }
