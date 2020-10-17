@@ -4,11 +4,8 @@ function filterOutNulls(values){
   var onlyNums = [];
 
   for (var i = 0; i < values.length; i++){
-    if (typeof values[i] !== 'object'){
+    if (values[i] !== null){
       onlyNums.push(values[i]);
-    }
-    else{
-      continue;
     }
   }
   return onlyNums;
