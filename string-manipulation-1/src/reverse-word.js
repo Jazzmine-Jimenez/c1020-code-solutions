@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 function reverseWord(word){
-  var reverseWord = " ";
+  var reverseWord = "";
   for (var i = word.length - 1; i >= 0; i--){
     reverseWord = reverseWord + word[i];
   }
