@@ -13,7 +13,16 @@ function countingClicks(event) {
     temp = "cool";
   }
   else if (numberOfClicks < 10) {
-    temp = "cool";
+    temp = "tepid";
+  }
+  else if (numberOfClicks < 10) {
+    temp = "warm";
+  }
+  else if (numberOfClicks < 10) {
+    temp = "hot";
+  }
+  else{
+    temp = "nuclear";
   }
 
   $hotButton.className = "hot-button " + temp;
