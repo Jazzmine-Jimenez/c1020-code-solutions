@@ -1,20 +1,20 @@
-$circleButton = document.querySelector(".circle", )
+var isOn = false;
+
+$circleButton = document.querySelector(".circle")
 $background = document.querySelector(".container")
 
 $circleButton.addEventListener("click", change);
 
 function change(event){
-  var statusOfButton = $circleButton.className;
-  var statusOfBackground = $background.className;
-
-  if (statusOfButton === "circle on"){
-    statusOfButton = "circle off";
-    statusOfBackground = "container off";
+  isOn = !isOn;
+  if (isOn){
+    $circleButton.className = "circle on";
+    $background.className = "container on";
   }
   else{
-    statusOfButton = "circle on";
-    statusOfBackground = "container on";
+    $circleButton.className = "circle off";
+    $background.className = "container off";
   }
-$circleButton.className = statusOfButton;
-$background.className = statusOfBackground;
+ = statusOfButton;
+ = statusOfBackground;
 }
