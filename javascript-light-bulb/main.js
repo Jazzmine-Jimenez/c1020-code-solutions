@@ -1,4 +1,4 @@
-var isOn = false;
+var isOn = true;
 
 $circleButton = document.querySelector(".circle")
 $background = document.querySelector(".container")
@@ -15,6 +15,4 @@ function change(event){
     $circleButton.className = "circle off";
     $background.className = "container off";
   }
- = statusOfButton;
- = statusOfBackground;
 }
