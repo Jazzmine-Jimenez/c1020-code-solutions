@@ -1,43 +1,39 @@
-.container-on{
+body{
+  background-color: blue;
+}
+.container{
   box-sizing: border-box;
   width: 1200px;
   height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(255, 246, 230);
 }
 
-.circle-on{
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
+.container.on{
+   background-color: rgb(255, 246, 230);
 }
 
-button.circle-on{
-  background-color: rgb(255, 255, 97);
-  border: none;
-  box-shadow: 1px 1px 20px rgb(252, 252, 124);
-}
-
-.container-off{
-  box-sizing: border-box;
-  width: 1200px;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.container.off{
   background-color: rgb(19, 10, 10);
 }
 
-.circle-off{
+.circle{
   height: 200px;
   width: 200px;
   border-radius: 50%;
 }
 
-button.circle-off{
+.circle.on{
+  background-color: rgb(255, 255, 97);
+  box-shadow: 1px 1px 20px rgb(252, 252, 124);
+}
+
+.circle.off{
   background-color: rgb(75, 75, 75);
-  border: none;
   box-shadow: 1px 1px 10px rgb(75, 75, 75);
+}
+
+button:focus{
+  border: transparent;
 }
