@@ -1,0 +1,44 @@
+body{
+  box-sizing: content-box;
+  background-color: rgba(126, 126, 126, 0.4);
+  z-index: ;
+}
+
+.modal-button{
+  background-color: blue;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  padding: 9px 23px;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 1px 1px 2px black;
+}
+
+.pop-up-container{
+  display: none;
+}
+
+.pop-up-container.opened{
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+}
+
+.pop-up{
+  background-color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.pop-up > button{
+  background-color: rgb(218, 108, 108);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  padding: 9px 23px;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 1px 1px 2px black;
+}
