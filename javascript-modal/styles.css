@@ -1,7 +1,13 @@
-body{
-  box-sizing: content-box;
-  background-color: rgba(126, 126, 126, 0.4);
-  z-index: ;
+.open{
+  background-color: rgba(163, 161, 161, 0.5);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
 }
 
 .modal-button{
@@ -13,16 +19,17 @@ body{
   border-radius: 3px;
   border: none;
   box-shadow: 1px 1px 2px black;
+
 }
 
 .pop-up-container{
   display: none;
 }
 
-.pop-up-container.opened{
+.opened{
   display: flex;
   justify-content: center;
-  position: relative;
+
 
 }
 
