@@ -1,17 +1,17 @@
 
-var $popUp = document.querySelector(".pop-up-container");
-var $background = document.querySelector(".container")
+var $popUp = document.querySelector('.pop-up');
+var $background = document.querySelector('.background');
 
-var $modalButton = document.querySelector(".modal-button")
+var $modalButton = document.querySelector('.modal-button');
 
-$modalButton.addEventListener("click", function(event){
-  $popUp.className = "pop-up-container opened";
-  $background.className = "container open";
-  });
+$modalButton.addEventListener('click', function (event) {
+  $popUp.className = 'pop-up opened';
+  $background.className = 'background on';
+});
 
+var $surveyButton = document.querySelector('.survey-button');
 
-var $surveyButton = document.querySelector(".survey-button")
-$surveyButton.addEventListener("click", function(event){
-  $popUp.className = "pop-up-container";
-  $background.className = "container";
+$surveyButton.addEventListener('click', function (event) {
+  $popUp.className = 'pop-up';
+  $background.className = 'background';
 });

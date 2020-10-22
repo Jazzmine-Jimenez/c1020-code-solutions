@@ -1,0 +1,14 @@
+
+.pop-up {
+  background: rgba(163, 161, 161, 50%);
+  text-align: center;
+  padding: 2rem;
+  z-index: 3;
+  width: 1200px;
+  height: 500px;
+  position: fixed;
+}
+
+.modal-button {
+  position: fixed;
+}
