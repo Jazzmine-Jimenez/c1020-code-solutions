@@ -1,11 +1,10 @@
 /* eslint-disable no-unused-vars */
-function takeRight(array, count){
-  debugger;
+function takeRight(array, count) {
   var newArray = [];
-  for (var i = 0; i < array.length; i++){
-    if(i > (array.length - 1) - count){
+  for (var i = 0; i < array.length; i++) {
+    if (i > (array.length - 1) - count) {
       newArray.push(array[i]);
     }
   }
   return newArray;
-  }
+}
