@@ -6,7 +6,7 @@ var $modalButton = document.querySelector('.modal-button');
 
 $modalButton.addEventListener('click', function (event) {
   $popUp.className = 'pop-up opened';
-  $background.className = 'background on';
+  $background.className = 'on';
 });
 
 var $surveyButton = document.querySelector('.survey-button');
