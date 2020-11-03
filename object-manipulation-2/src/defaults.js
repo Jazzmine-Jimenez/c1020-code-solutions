@@ -2,26 +2,30 @@
 function defaults(target, source) {
   debugger;
   for (var targetKey in target) {
+    for (var sourceKey in source) {
 
-    if (targetKey === undefined) {
-      for (var sourceKey in source) {
+      if (targetKey !== sourceKey) {
         var value = source[sourceKey];
         target[sourceKey] = value;
       }
-    }
-    for (sourceKey in source) {
-      if (targetKey !== sourceKey) {
-        value = source[sourceKey];
-        target[sourceKey] = value;
-      }
       if (targetKey === sourceKey) {
-        console.log('inside targetKey for statement');
+        var key = sourceKey;
+        value = target[sourceKey];
+        console.log(key);
+        console.log(value);
+
+        target.property = value;
+
+        console.log(target);
         break;
       }
-
+    }
+    if()
+  }
+  if (targetKey === undefined) {
+    for (sourceKey in source) {
+      value = source[sourceKey];
+      target[sourceKey] = value;
     }
   }
 }
-
-// last test need to be able to keep target key with original values. goes through targetkey for loop but does not more in
-// properties in the sourceKey for loop
