@@ -1,13 +1,16 @@
 /* eslint-disable no-unused-vars */
 function defaults(target, source) {
   debugger;
-  for (var targetKey in target) {
-    for (var sourceKey in source) {
-
+  var storingObject = {};
+  for (var sourceKey in source) {
+    for (var targetKey in target) {
+      // swap for loops
       if (targetKey !== sourceKey) {
         var value = source[sourceKey];
-        target[sourceKey] = value;
+        storingObject[sourceKey] = value;
+        continue;
       }
+
       if (targetKey === sourceKey) {
         var key = sourceKey;
         value = target[sourceKey];
@@ -17,10 +20,8 @@ function defaults(target, source) {
         target.property = value;
 
         console.log(target);
-        break;
       }
     }
-    if()
   }
   if (targetKey === undefined) {
     for (sourceKey in source) {
@@ -28,4 +29,5 @@ function defaults(target, source) {
       target[sourceKey] = value;
     }
   }
+  return target;
 }
