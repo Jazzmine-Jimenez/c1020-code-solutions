@@ -1,31 +1,28 @@
 /* eslint-disable no-unused-vars */
-// function chunk(array, size) {
-//   var newArray = [];
-//   for (var i = 0; i < array.length; i++) {
-//     var numOfCycles = 0;
-//     // while (numOfCycles < 0) {
-//     //   newArray[numOfCycles] = array[i];
-//     //   i++;
-//     // }
-//     // numOfCycles++;
-//   }
-//   return newArray;
-// }
-
 function chunk(array, size) {
+  debugger;
   var newArray = [];
+  var tempArray = [];
   var rotation = 0;
-  for (var i = 0; i < array.length; i++) {
-    var tempArray = [];
+  for (var i = 0; i <= array.length; i++) {
     if (size > rotation) {
       tempArray.push(array[i]);
       rotation++;
-    }
-    if (rotation === 2) {
+      continue;
+    } if (rotation === size) {
+      console.log(tempArray);
+      newArray.push(tempArray);
+      console.log(newArray);
       rotation = 0;
+      tempArray = [];
+      tempArray.push(array[i]);
+      rotation++;
       continue;
     }
-    newArray.push(tempArray);
   }
+  console.log('tempArray:', tempArray);
+  console.log('newArray:', newArray);
   return newArray;
 }
+
+//  {  // if else statement does not work
