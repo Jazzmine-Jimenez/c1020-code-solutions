@@ -9,20 +9,25 @@ function chunk(array, size) {
       tempArray.push(array[i]);
       rotation++;
       continue;
-    } if (rotation === size) {
-      console.log(tempArray);
+    } if (rotation === size & array.length % size === 0) {
       newArray.push(tempArray);
-      console.log(newArray);
       rotation = 0;
       tempArray = [];
       tempArray.push(array[i]);
       rotation++;
       continue;
     }
+    if (rotation === size & array.length % size === 1) {
+      newArray.push(tempArray);
+      rotation = 0;
+      tempArray = [];
+      tempArray.push(array[i]);
+      rotation++;
+      // if (rotation * size < array.length) {
+      //   newArray.push(tempArray);
+      // } something to tell it to push extra index into arrays
+      continue;
+    }
   }
-  console.log('tempArray:', tempArray);
-  console.log('newArray:', newArray);
   return newArray;
 }
-
-//  {  // if else statement does not work
