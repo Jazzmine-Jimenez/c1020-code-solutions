@@ -24,7 +24,8 @@
   text-align: center;
 }
 
-.arrow {
+.arrow-right,
+.arrow-left {
   font-size: 200%;
 }
 
