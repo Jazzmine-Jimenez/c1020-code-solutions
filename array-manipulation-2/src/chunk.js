@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+
 function chunk(array, size) {
   var newArray = [];
   var tempArray = [];

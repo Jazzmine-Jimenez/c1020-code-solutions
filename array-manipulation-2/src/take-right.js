@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+
 function takeRight(array, count) {
   var newArray = [];
   for (var i = 0; i < array.length; i++) {
