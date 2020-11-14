@@ -6,7 +6,6 @@ function take(array, count) {
     if (array[i] !== undefined) {
       newArray.push(array[i]);
     }
-    continue;
   }
   return newArray;
 }

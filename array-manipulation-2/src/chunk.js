@@ -8,14 +8,12 @@ function chunk(array, size) {
     if (size > rotation) {
       tempArray.push(array[i]);
       rotation++;
-      continue;
-    } if (rotation === size) {
+    } else if (rotation === size) {
       newArray.push(tempArray);
       rotation = 0;
       tempArray = [];
       tempArray.push(array[i]);
       rotation++;
-      continue;
     }
   }
   if (array.length === 0) {
