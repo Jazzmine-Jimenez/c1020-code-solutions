@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars */
-function dropRight(array, count) {
+
+function takeRight(array, count) {
   var newArray = [];
   for (var i = 0; i < array.length; i++) {
-    if (i < array.length - count) {
+    if (i > (array.length - 1) - count) {
       newArray.push(array[i]);
     }
   }
   return newArray;
+}
