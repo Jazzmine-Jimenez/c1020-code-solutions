@@ -1,0 +1,43 @@
+.main-container{
+ background-color: rgb(241, 241, 241);
+ padding: 1rem 0;
+ margin: 0 1rem;
+
+}
+
+.heading{
+  text-align: center;
+  font-family: 'Barlow', sans-serif;
+  font-weight: bolder;
+}
+.row{
+  display: flex;
+  font-family: 'Barlow', sans-serif;
+}
+
+.column{
+  width: 20%;
+  margin: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.phone-img{
+  width: 12rem;
+}
+
+.icon-img{
+  width: 3rem;
+}
+
+.column > h5{
+  text-align: center;
+  margin: 0;
+  font-weight: bolder;
+}
+
+.column > p{
+  text-align: center;
+  font-size: 0.8rem;
+}

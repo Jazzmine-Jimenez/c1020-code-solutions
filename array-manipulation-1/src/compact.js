@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars */
-function dropRight(array, count) {
+function compact(array){
+  debugger;
   var newArray = [];
-  for (var i = 0; i < array.length; i++) {
-    if (i < array.length - count) {
+  for(var i = 0; i < array.length; i++){
+    if (array[i] ){
       newArray.push(array[i]);
     }
   }
   return newArray;
+}
