@@ -5,9 +5,22 @@ function isAnagram(firstString, secondString) {
 
   if (newFirst.length !== newSecond.length) return false;
 
-  for (var i = 0; i < newFirst.length; i++) {
-    var statement = newFirst.includes(newSecond[i]);
-    if (statement === false) return statement;
+  var first = splitSort(newFirst);
+  var second = splitSort(newSecond);
+
+  if (first !== second) {
+    return false;
+  } else {
+    return true;
   }
-  return statement;
+}
+
+function splitSort(word) {
+  var newArray = word.split('');
+  newArray = newArray.sort();
+  var tempString = '';
+  for (var i = 0; i < newArray.length; i++) {
+    tempString = tempString + newArray[i];
+  }
+  return tempString;
 }
