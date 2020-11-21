@@ -1,14 +1,16 @@
 /* eslint-disable no-unused-vars */
 function titleCase(title) {
   var tempArray = title.split(' ');
-  var semicolonIndex = tempArray[i].indexOf(':');
-  if (semicolonIndex !== -1){
 
-  }
   var updatedString = '';
   var holder;
   for (var i = 0; i < tempArray.length; i++) {
 
+    var semicolonIndex = tempArray[i].indexOf(':');
+    if (semicolonIndex !== -1) {
+      var newtempArray = tempArray[i].split(':');
+      console.log(newtempArray);
+    }
     if (i === 0 && tempArray[i].toLowerCase() !== 'javascript:') {
       var newWord = capitaizeWord(tempArray[i]);
       updatedString = updatedString + ' ' + newWord;
@@ -24,8 +26,7 @@ function titleCase(title) {
     } else if (tempArray[i].toLowerCase() === 'javascript') {
       updatedString = updatedString + ' JavaScript';
     } else if (semicolonIndex !== -1) {
-
-      }
+      // tempArray[i];
     } else if (tempArray[i].length > 3 && i !== 0) {
       newWord = capitaizeWord(tempArray[i]);
       updatedString = updatedString + ' ' + newWord;
