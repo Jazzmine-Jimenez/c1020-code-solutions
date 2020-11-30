@@ -15,7 +15,7 @@ if (process.argv[2] === 'create') {
   data.note++;
   data.notes[id] = newNote;
   const jsonData = JSON.stringify(data);
-  fs.writeFile('data.json', jsonData, err => {
+  fs.writeFile('./data.json', jsonData, 'utf8', err => {
     if (err) throw err;
   });
 }
