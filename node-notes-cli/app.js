@@ -1,4 +1,5 @@
 const fs = require('fs');
+const data = require('./data.json');
 
 if (process.argv[2] === 'read') {
   fs.readFile('./data.json', 'utf8', (err, data) => {
@@ -9,20 +10,14 @@ if (process.argv[2] === 'read') {
 }
 
 if (process.argv[2] === 'create') {
-  const newObj = {};
-  fs.readFile('./data.json', 'utf8', (err, data) => {
+  const id = data.nextId;
+  const newNote = process.argv[3];
+  data.note++;
+  data.notes[id] = newNote;
+  const jsonData = JSON.stringify(data);
+  fs.writeFile('data.json', jsonData, err => {
     if (err) throw err;
-    const dataObj = JSON.parse(data);
-    console.log('data as Object:', dataObj);
-    for (var entries in dataObj) {
-      newObj[entries] = dataObj.entries;
-    }
-    console.log('newObj:', newObj);
-  }
-
-    // newObj.notes[dataObj.nextID] = process.argv[3];
-
-  );
+  });
 }
 
 // fs.appendFile('./data.json', JSON.stringify(newObj), (err, data) => {
