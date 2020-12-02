@@ -82,7 +82,7 @@ app.put('/api/notes/:id', (req, res) => {
   } else if (typeof data.notes[updateId] !== 'undefined') {
     data.notes[updateId].content = updatedNote;
     res.status(200);
-    res.json(data.notes);
+    res.json(data.notes[updateId]);
   } else {
     res.status(500);
     res.send({ error: 'An unexpected error occurred.' });
