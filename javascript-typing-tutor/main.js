@@ -1,13 +1,26 @@
 const letters = document.querySelectorAll('span');
 
 document.addEventListener('keydown', event => {
-  if (letters[0]) {
-    if (event.key === 'h') {
+
+  for (let i = 0; i < letters.length; i++){
+    if (letters[i]) {
+      if ((letters[0].textContent).toLowerCase() === event.key) {
       letters[0].className = 'clicked current-letter';
-    } else {
-      letters[0].className = 'clicked wrong-letter';
+      }else if ((letters[0].textContent).toLowerCase() !== event.key) {
+      letters[0].className = 'wrong-letter';
     }
   }
+
+
+  // if ((letters[0].textContent).toLowerCase() === event.key) {
+  //   letters[0].className = 'clicked current-letter';
+  // } else if ((letters[0].textContent).toLowerCase() !== event.key) {
+  //   letters[0].className = 'wrong-letter';
+  // } else if (letters[1].textContent === event.key) {
+  //   letters[1].className = 'clicked current-letter';
+  // } else if (letters[1].textContent !== event.key) {
+  //   letters[1].className = 'wrong-letter';
+  // }
 
   // if (event.key === 'h') {
   //   letters[i].className = 'clicked current-letter';

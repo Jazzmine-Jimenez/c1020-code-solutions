@@ -18,5 +18,5 @@ span {
 }
 
 .wrong-letter {
-  font-style: italic;
+  color: red;
 }
