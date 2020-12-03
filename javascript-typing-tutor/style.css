@@ -1,0 +1,22 @@
+body {
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  font-size: 10rem;
+}
+
+.clicked {
+  color: greenyellow;
+}
+
+.current-letter {
+  font-style: italic;
+}
+
+.wrong-letter {
+  font-style: italic;
+}
