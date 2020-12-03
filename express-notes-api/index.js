@@ -17,11 +17,11 @@ app.get('/api/notes', (req, res) => {
 // Clients can GET a single note by id
 app.get('/api/notes/:id', (req, res) => {
   const requestedId = Number(req.params.id);
+  const requestedNote = data.notes[requestedId];
   if (requestedId < 0) {
     res.status(400);
     res.send({ error: 'id must be a positive interger' });
-  } else if (requestedId === data.notes[requestedId]) {
-    const requestedNote = data.notes[requestedId];
+  } else if (requestedNote) {
     res.status(200);
     res.json(requestedNote);
   } else {
@@ -44,12 +44,16 @@ app.post('/api/notes', (req, res) => {
   } else if (newNote.content) {
     data.notes[data.nextId] = newNote;
     data.nextId++;
-    res.status(201);
-    res.json(newNote);
-    writeToFile(data);
-  } else {
-    res.status(500);
-    res.send({ error: 'An unexpected error occurred.' });
+    const jsonData = JSON.stringify(data, null, 2);
+    fs.writeFile('./data.json', jsonData, 'utf8', err => {
+      if (err) {
+        console.error(err);
+        res.status(500);
+        res.send({ error: 'An unexpected error occurred.' });
+      } else {
+        res.status(201).json(newNote);
+      }
+    });
   }
 });
 
@@ -64,11 +68,16 @@ app.delete('/api/notes/:id', (req, res) => {
     res.send({ error: 'must enter an existing id' });
   } else if (deleteId === data.notes[deleteId].id) {
     delete data.notes[deleteId];
-    writeToFile(data);
-    res.sendStatus(200);
-  } else {
-    res.status(500);
-    res.send({ error: 'An unexpected error occurred.' });
+    const jsonData = JSON.stringify(data, null, 2);
+    fs.writeFile('./data.json', jsonData, 'utf8', err => {
+      if (err) {
+        console.error(err);
+        res.status(500);
+        res.send({ error: 'An unexpected error occurred.' });
+      } else {
+        res.sendStatus(200);
+      }
+    });
   }
 });
 
@@ -85,18 +94,16 @@ app.put('/api/notes/:id', (req, res) => {
     res.send({ error: 'must enter an existing id' });
   } else if (typeof data.notes[updateId] !== 'undefined') {
     data.notes[updateId].content = updatedNote;
-    res.status(200);
-    res.json(data.notes[updateId]);
-    writeToFile(data);
-  } else {
-    res.status(500);
-    res.send({ error: 'An unexpected error occurred.' });
+    const jsonData = JSON.stringify(data, null, 2);
+    fs.writeFile('./data.json', jsonData, 'utf8', err => {
+      if (err) {
+        console.error(err);
+        res.status(500);
+        res.send({ error: 'An unexpected error occurred.' });
+      } else {
+        res.status(200);
+        res.json(data.notes[updateId]);
+      }
+    });
   }
 });
-
-function writeToFile(data) {
-  const jsonData = JSON.stringify(data, null, 2);
-  fs.writeFile('./data.json', jsonData, 'utf8', err => {
-    if (err) throw err;
-  });
-}
