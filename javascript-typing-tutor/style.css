@@ -14,9 +14,14 @@ span {
 }
 
 .current-letter {
-  font-style: italic;
+  color: greenyellow;
+}
+
+.next-letter {
+  text-decoration: underline;
 }
 
 .wrong-letter {
   color: red;
+  text-decoration: underline;
 }
