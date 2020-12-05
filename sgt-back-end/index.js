@@ -32,13 +32,13 @@ app.post('/api/grades', (req, res) => {
   const values = [name, course, score];
 
   if (score < 0 || score > 100 || !Number.isInteger(score)) {
-    res.status(404).json(
+    return res.status(404).json(
       { error: 'Must include a score as an interger between 1 - 100' });
   } else if (!name) {
-    res.status(404).json(
+    return res.status(404).json(
       { error: 'Must include a name' });
   } else if (!course) {
-    res.status(404).json(
+    return res.status(404).json(
       { error: 'Must include a course' });
   }
 
@@ -68,13 +68,13 @@ app.put('/api/grades/:gradeId', (req, res) => {
   const values = [updateId, name, course, score];
 
   if (score < 0 || score > 100 || !Number.isInteger(score)) {
-    res.status(404).json(
+    return res.status(404).json(
       { error: 'Must include a score as an interger between 1 - 100' });
   } else if (!name) {
-    res.status(404).json(
+    return res.status(404).json(
       { error: 'Must include a name' });
   } else if (!course) {
-    res.status(404).json(
+    return res.status(404).json(
       { error: 'Must include a course' });
   }
   const sql = `
