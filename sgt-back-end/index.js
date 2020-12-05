@@ -100,22 +100,26 @@ app.put('/api/grades/:gradeId', (req, res) => {
 });
 
 app.delete('/api/grades/:gradeId', (req, res) => {
-  const deleteId = req.params.gradeId;
-
+  const deleteId = Number(req.params.gradeId);
+  if (deleteId < 0 || !Number.isInteger(deleteId)) {
+    return res.status(300).json(
+      { error: 'Must enter an integer greater than 0.' });
+  }
+  const params = [deleteId];
   const sql = `
- delete from "grades"
-       where "gradeId" = ${deleteId}
-   returning *
-      `;
-  db.query(sql, deleteId)
+   delete from "grades"
+         where "gradeId" = $1
+     returning *
+        `;
+  db.query(sql, params)
     .then(result => {
-      if (!deleteId) {
+      const grade = result.rows[0];
+      if (!grade) {
         res.status(400).json(
-          { error: `Cannot find grade with "gradeId" ${deleteId}` }
+          { error: `Cannot find a grade with gradeId:${deleteId}` }
         );
       } else {
-        const updatedGrade = result.rows[0];
-        res.status(200).json(updatedGrade);
+        res.sendStatus(204);
       }
     })
     .catch(err => {
