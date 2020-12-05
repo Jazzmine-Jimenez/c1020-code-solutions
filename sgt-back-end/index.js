@@ -104,7 +104,7 @@ app.delete('/api/grades/:gradeId', (req, res) => {
 
   const sql = `
  delete from "grades"
-       where "gradeId" = $1
+       where "gradeId" = ${deleteId}
    returning *
       `;
   db.query(sql, deleteId)
