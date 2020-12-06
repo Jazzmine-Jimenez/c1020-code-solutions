@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+
 function unique(array) {
   var tempArray = array;
   for (var i = 0; i < array.length; i++) {

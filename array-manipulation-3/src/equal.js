@@ -6,3 +6,4 @@ function equal(first, second) {
   }
   return true;
 }
+

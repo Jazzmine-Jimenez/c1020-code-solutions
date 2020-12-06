@@ -1,0 +1,27 @@
+body {
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  font-size: 10rem;
+}
+
+.clicked {
+  color: greenyellow;
+}
+
+.current-letter {
+  color: greenyellow;
+}
+
+.next-letter {
+  text-decoration: underline;
+}
+
+.wrong-letter {
+  color: red;
+  text-decoration: underline;
+}
