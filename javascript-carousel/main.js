@@ -11,9 +11,67 @@ var data = {
   ]
 };
 
-// setInterval(switchImage, 2000);
+// setInterval(rotate, 2000);
 
-function switchImage() {
+// Clicking on Buttons
+// document.addEventListener('click', function (event) {
+//   if (event.target.tagName !== 'I') return;
+
+//   if (event.target === $circleIcon[0]) {
+//     $circleIcon[data.position].className = 'far fa-circle circle-icon';
+//     data.position = 4;
+//     rotate(data.position);
+//   } else if (event.target === $circleIcon[1]) {
+//     $circleIcon[data.position].className = 'far fa-circle circle-icon';
+//     data.position = 0;
+//     rotate(data.position);
+//   } else if (event.target === $circleIcon[2]) {
+//     $circleIcon[data.position].className = 'far fa-circle circle-icon';
+//     data.position = 1;
+//     rotate();
+//   } else if (event.target === $circleIcon[3]) {
+//     $circleIcon[data.position].className = 'far fa-circle circle-icon';
+//     data.position = 2;
+//     rotate();
+//   } else if (event.target === $circleIcon[4]) {
+//     $circleIcon[data.position].className = 'far fa-circle circle-icon';
+//     data.position = 3;
+//     rotate();
+//   }
+// });
+
+// Clicking on Arrows
+// document.addEventListener('click', function (event) {
+//   if (event.target.tagName !== 'I') return;
+
+//   var $leftArrow = document.querySelector('.arrow-left');
+//   var $rightArrow = document.querySelector('.arrow-right');
+
+//   if (event.target === $leftArrow) {
+//     if (data.position === 0) {
+//       data.position = 4;
+//       switchLeft(data.position);
+//     } else {
+//       data.position--;
+//       switchLeft(data.position);
+//     }
+//   }
+
+//   if (event.target === $rightArrow) {
+//     if (data.position === 4) {
+//       $circleIcon[data.position].className = 'far fa-circle circle-icon';
+//       $circleIcon[0].className = 'fas fa-circle circle-icon';
+//       data.position = 4;
+//       // switch();
+//     } else {
+//       $circleIcon[data.position].className = 'far fa-circle circle-icon';
+//       $circleIcon[data.position + 1].className = 'fas fa-circle circle-icon';
+//       // switch();
+//     }
+//   }
+// });
+
+function rotate() {
   if (data.position === 4) {
     $circleIcon[data.position].className = 'far fa-circle circle-icon';
     data.position = 0;
@@ -25,99 +83,14 @@ function switchImage() {
     $circleIcon[data.position - 1].className = 'far fa-circle circle-icon';
     $circleIcon[data.position].className = 'fas fa-circle circle-icon';
   }
-
 }
 
-// Clicking on Buttons
-document.addEventListener('click', function (event) {
-  if (event.target.tagName !== 'I') return;
-
-  if (event.target === $circleIcon[0]) {
-    $circleIcon[data.position].className = 'far fa-circle circle-icon';
-    data.position = 4;
-    switchImage();
-  } else if (event.target === $circleIcon[1]) {
-    $circleIcon[data.position].className = 'far fa-circle circle-icon';
-    data.position = 0;
-    switchImage();
-  } else if (event.target === $circleIcon[2]) {
-    $circleIcon[data.position].className = 'far fa-circle circle-icon';
-    data.position = 1;
-    switchImage();
-  } else if (event.target === $circleIcon[3]) {
-    $circleIcon[data.position].className = 'far fa-circle circle-icon';
-    data.position = 2;
-    switchImage();
-  } else if (event.target === $circleIcon[4]) {
-    $circleIcon[data.position].className = 'far fa-circle circle-icon';
-    data.position = 3;
-    switchImage();
-  }
-});
-
-// Clicking on Arrows
-document.addEventListener('click', function (event) {
-  if (event.target.tagName !== 'I') return;
-
-  var $leftArrow = document.querySelector('.arrow-left');
-  var $rightArrow = document.querySelector('.arrow-right');
-
-  if (event.target === $leftArrow) {
-    console.log(data.position);
-    leftArrow(data.position);
-    // if (data.position === 0) {
-    //   $circleIcon[data.position].className = 'far fa-circle circle-icon';
-    //   $circleIcon[4].className = 'fas fa-circle circle-icon';
-    //   data.position = 3;
-    //   switchImage();
-
-    // } else if (data.position === 1) {
-    //   $circleIcon[data.position].className = 'far fa-circle circle-icon';
-    //   $circleIcon[data.position - 1].className = 'fas fa-circle circle-icon';
-    //   data.position = 4;
-    //   switchImage();
-
-    // } else {
-    //   $circleIcon[data.position].className = 'far fa-circle circle-icon';
-    //   $circleIcon[data.position - 1].className = 'fas fa-circle circle-icon';
-    //   data.position = data.position - 2;
-    //   switchImage();
-    // }
-  }
-  if (event.target === $rightArrow) {
-    if (data.position === 4) {
-      $circleIcon[data.position].className = 'far fa-circle circle-icon';
-      $circleIcon[0].className = 'fas fa-circle circle-icon';
-      data.position = 4;
-      switchImage();
-    } else {
-      $circleIcon[data.position].className = 'far fa-circle circle-icon';
-      $circleIcon[data.position + 1].className = 'fas fa-circle circle-icon';
-      switchImage();
-    }
-  }
-});
-
-function leftArrow(position) {
-  if (position === 0) {
-    console.log('inside position 0 conditional');
-    $circleIcon[0].className = 'far fa-circle circle-icon';
-    $circleIcon[4].className = 'fas fa-circle circle-icon';
-    position = 4;
-    switchImage();
-  }
-  // else if (position === 1) {
-  //   console.log('inside position 1 conditional');
-  //   console.log(position);
-  //   $circleIcon[position].className = 'far fa-circle circle-icon';
-  //   $circleIcon[position - 1].className = 'fas fa-circle circle-icon';
-  //   position = 0;
-  //   switchImage();
-  // }
-  // else {
-  //   $circleIcon[position].className = 'far fa-circle circle-icon';
-  //   $circleIcon[position - 1].className = 'fas fa-circle circle-icon';
-  //   data.position = position - 2;
-  //   switchImage();
-  // }
-}
+// function switchLeft(position) {
+//   if (position === 0) {
+//     $circleIcon[0].className = 'far fa-circle circle-icon';
+//     $circleIcon[4].className = 'fas fa-circle circle-icon';
+//   } else {
+//     $circleIcon[position + 1].className = 'far fa-circle circle-icon';
+//     $circleIcon[position].className = 'fas fa-circle circle-icon';
+//   }
+// }
