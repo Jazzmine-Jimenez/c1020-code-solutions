@@ -41,21 +41,15 @@ var data = {
 // });
 
 // Clicking on Arrows
-// document.addEventListener('click', function (event) {
-//   if (event.target.tagName !== 'I') return;
+document.addEventListener('click', function (event) {
+  if (event.target.tagName !== 'I') return;
 
-//   var $leftArrow = document.querySelector('.arrow-left');
-//   var $rightArrow = document.querySelector('.arrow-right');
+  var $leftArrow = document.querySelector('.arrow-left');
+  // var $rightArrow = document.querySelector('.arrow-right');
 
-//   if (event.target === $leftArrow) {
-//     if (data.position === 0) {
-//       data.position = 4;
-//       switchLeft(data.position);
-//     } else {
-//       data.position--;
-//       switchLeft(data.position);
-//     }
-//   }
+  if (event.target === $leftArrow) {
+    switchLeft();
+  }
 
 //   if (event.target === $rightArrow) {
 //     if (data.position === 4) {
@@ -69,7 +63,7 @@ var data = {
 //       // switch();
 //     }
 //   }
-// });
+});
 
 function rotate() {
   if (data.position === 4) {
@@ -85,12 +79,16 @@ function rotate() {
   }
 }
 
-// function switchLeft(position) {
-//   if (position === 0) {
-//     $circleIcon[0].className = 'far fa-circle circle-icon';
-//     $circleIcon[4].className = 'fas fa-circle circle-icon';
-//   } else {
-//     $circleIcon[position + 1].className = 'far fa-circle circle-icon';
-//     $circleIcon[position].className = 'fas fa-circle circle-icon';
-//   }
-// }
+function switchLeft() {
+  if (data.position === 0) {
+    $circleIcon[0].className = 'far fa-circle circle-icon';
+    $circleIcon[4].className = 'fas fa-circle circle-icon';
+    data.position = 4;
+    $charImg.setAttribute('src', data.images[data.position]);
+  } else {
+    $circleIcon[data.position].className = 'far fa-circle circle-icon';
+    data.position--;
+    $circleIcon[data.position].className = 'fas fa-circle circle-icon';
+    $charImg.setAttribute('src', data.images[data.position]);
+  }
+}
