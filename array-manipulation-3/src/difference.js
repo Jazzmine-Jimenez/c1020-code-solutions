@@ -1,28 +1,15 @@
 /* eslint-disable no-unused-vars */
-function difference(first, second) {
-  var newArray = [];
-  for (var i = 0; i < first.length; i++) {
-    var index = second.indexOf(first[i]);
-    if (index === -1) {
-      newArray.push(first[i]);
-    }
-    index = first.indexOf(second[i]);
-    if (index === -1) {
-      newArray.push(second[i]);
+function difference(first, last) {
+  const newArray = [];
+  for (let n = 0; n < first.length; n++) {
+    if (!last.includes(first[n])) {
+      newArray.push(first[n]);
     }
   }
-  console.log(newArray);
+  for (let i = 0; i < last.length; i++) {
+    if (!first.includes(last[i])) {
+      newArray.push(last[i]);
+    }
+  }
   return newArray;
 }
-
-// function difference(first, second) {
-//   var newArray = [];
-//   for (var i = 0; i < first.length; i++) {
-//     var statement = second.includes(first[i]);
-//     if (!statement) {
-//       newArray.push(first[i]);
-//     }
-//   }
-//   console.log(newArray);
-//   return newArray;
-// }
