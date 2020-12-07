@@ -13,3 +13,4 @@ function difference(first, last) {
   }
   return newArray;
 }
+

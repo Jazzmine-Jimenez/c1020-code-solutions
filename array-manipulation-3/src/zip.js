@@ -10,3 +10,4 @@ function zip(first, second) {
   }
   return mainArray;
 }
+

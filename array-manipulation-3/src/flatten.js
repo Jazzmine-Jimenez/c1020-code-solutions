@@ -12,3 +12,4 @@ function flatten(array) {
   }
   return tempArray;
 }
+

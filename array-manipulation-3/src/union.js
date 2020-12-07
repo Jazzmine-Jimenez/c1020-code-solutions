@@ -12,3 +12,4 @@ function union(first, second) {
   }
   return newArray;
 }
+
