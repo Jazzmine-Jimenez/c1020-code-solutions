@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+
 function zip(first, second) {
   var mainArray = [];
   for (var i = 0; i < first.length && i < second.length; i++) {

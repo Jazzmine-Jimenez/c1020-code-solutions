@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+
 function union(first, second) {
   const newArray = [];
   for (let n = 0; n < first.length; n++) {
