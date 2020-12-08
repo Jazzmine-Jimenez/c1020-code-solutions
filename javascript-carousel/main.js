@@ -17,20 +17,10 @@ setInterval(rotateCarousel, 3000);
 document.addEventListener('click', function (event) {
   if (event.target.tagName !== 'I') return;
 
-  if (event.target === $circleIcon[0]) {
-    data.position = 0;
-    ImageCircle(data.position);
-  } else if (event.target === $circleIcon[1]) {
-    data.position = 1;
-    ImageCircle(data.position);
-  } else if (event.target === $circleIcon[2]) {
-    data.position = 2;
-    ImageCircle(data.position);
-  } else if (event.target === $circleIcon[3]) {
-    data.position = 3;
-    ImageCircle(data.position);
-  } else if (event.target === $circleIcon[4]) {
-    data.position = 4;
+  for (let i = 0; i < $circleIcon.length; i++) {
+    if (event.target === $circleIcon[i]) {
+      data.position = i;
+    }
     ImageCircle(data.position);
   }
 });
@@ -39,15 +29,12 @@ document.addEventListener('click', function (event) {
 document.addEventListener('click', function (event) {
   if (event.target.tagName !== 'I') return;
 
-  var $leftArrow = document.querySelector('.arrow-left');
-  var $rightArrow = document.querySelector('.arrow-right');
-
-  if (event.target === $leftArrow) {
+  if (event.target.matches('.arrow-left')) {
     switchLeft();
   }
 
-  if (event.target === $rightArrow) {
-    switchRight();
+  if (event.target.matches('.arrow-right')) {
+    rotateCarousel();
   }
 });
 
@@ -64,21 +51,10 @@ function rotateCarousel() {
 function switchLeft() {
   if (data.position === 0) {
     data.position = 4;
-    ImageCircle(data.position);
   } else {
     data.position--;
-    ImageCircle(data.position);
   }
-}
-
-function switchRight() {
-  if (data.position === 4) {
-    data.position = 0;
-    ImageCircle(data.position);
-  } else {
-    data.position++;
-    ImageCircle(data.position);
-  }
+  ImageCircle(data.position);
 }
 
 function ImageCircle(position) {
