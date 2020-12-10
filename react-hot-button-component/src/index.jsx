@@ -1,15 +1,8 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-
-class CustomButton extends React.Component {
-  render() {
-    return (
-      <button> Hot Button </button >
-    );
-  }
-}
+import React from 'react';
+import HotButton from './hot-button';
 
 ReactDOM.render(
-  <CustomButton />,
+  <HotButton />,
   document.querySelector('#root')
 );

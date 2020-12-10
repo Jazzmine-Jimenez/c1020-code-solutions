@@ -4,6 +4,30 @@ button {
   font-size: larger;
 }
 
+.step0 {
+  background-color: teal;
+}
+
 .step1 {
-  background-color: rgb(58, 177, 88);
+  background-color: rgb(231, 183, 221);
+}
+
+.step2 {
+  background-color: rgb(206, 122, 206);
+}
+
+.step3 {
+  background-color: peachpuff;
+}
+
+.step4 {
+  background-color: yellow;
+}
+
+.step5 {
+  background-color: orange;
+}
+
+.step6 {
+  background-color: red;
 }
