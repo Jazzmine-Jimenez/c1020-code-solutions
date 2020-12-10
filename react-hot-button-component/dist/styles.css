@@ -1,0 +1,9 @@
+button {
+  padding: 1rem;
+  border: 2px solid black;
+  font-size: larger;
+}
+
+.step1 {
+  background-color: rgb(58, 177, 88);
+}
