@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+}
+
+.oval {
+  height: 35px;
+  width: 82px;
+  border-radius: 47%;
+  background-color: rgb(204, 199, 199);
+  border: 3px solid black;
+  margin-right: 1rem;
+}
+
+.circle {
+  position: relative;
+  height: 33px;
+  width: 33px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+.oval.on {
+  background-color: rgb(161, 245, 150);
+}
+
+.circle.on {
+  left: 45px;
+}
+
+.circle.off {
+  top: 0.5px;
+  left: 0.5px;
+}
