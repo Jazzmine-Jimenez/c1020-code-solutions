@@ -3,20 +3,18 @@ import React from 'react';
 export default class ToggleButton extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { click: false };
+    this.state = { isToggleOn: false };
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
-    this.setState({
-      click: true
-    });
+  handleToggle() {
+    this.setState({ isToggleOn: !this.state.isToggleOn });
   }
 
   render() {
-    if (this.state.click) {
+    if (this.state.isToggleOn) {
       return (
-        <div onClick={this.handleClick} className="container">
+        <div onClick={this.handleToggle} className="container">
           <div className="oval">
             <div className="circle off"></div>
           </div>
@@ -25,7 +23,7 @@ export default class ToggleButton extends React.Component {
       );
     } else {
       return (
-        <div onClick={this.handleClick} className="container">
+        <div onClick={this.handleToggle} className="container">
           <div className="oval on">
             <div className="circle on"></div>
           </div>
