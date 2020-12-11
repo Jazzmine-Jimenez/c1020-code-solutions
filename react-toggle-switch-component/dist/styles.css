@@ -1,7 +1,8 @@
-#root {
+.container {
   display: flex;
 }
 
+/* oval off is just oval */
 .oval {
   height: 35px;
   width: 82px;
@@ -12,6 +13,7 @@
 }
 
 .circle {
+  position: relative;
   height: 33px;
   width: 33px;
   background-color: white;
@@ -19,6 +21,15 @@
   border-radius: 50%;
 }
 
-.on {
-  background-color: rgb(88, 197, 88);
+.oval.on {
+  background-color: rgb(161, 245, 150);
+}
+
+.circle.on {
+  left: 45px;
+}
+
+.circle.off {
+  top: 0.5px;
+  left: 0.5px;
 }
