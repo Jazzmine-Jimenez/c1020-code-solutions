@@ -4,7 +4,7 @@ export default class ToggleButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isToggleOn: false };
-    this.handleClick = this.handleClick.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
   }
 
   handleToggle() {
