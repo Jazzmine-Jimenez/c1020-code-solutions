@@ -9,6 +9,7 @@ class StopWatch extends React.Component {
     this.handleClickPlay = this.handleClickPlay.bind(this);
     this.handleClickPause = this.handleClickPause.bind(this);
     this.changeIcon = this.changeIcon.bind(this);
+    this.clearTimer = this.clearTimer.bind(this);
   }
 
   addASecond() {
@@ -32,19 +33,23 @@ class StopWatch extends React.Component {
     clearInterval(this.timerID);
   }
 
+  clearTimer() {
+    this.setState({ seconds: 0, isTicking: false });
+  }
+
   render() {
     if (!this.state.isTicking) {
       return (
         <div className="container">
           <div className="row">
             <div className="column-full">
-              <div className="circle">
+              <div onClick={this.clearTimer} className="circle">
                 <div className="time">{this.state.seconds}</div>
               </div>
             </div>
           </div>
           <div className="row">
-            <div className="pause-button">
+            <div className="button">
               <i onClick={this.handleClickPlay} className="fas fa-play"></i>
             </div>
           </div>
@@ -61,7 +66,7 @@ class StopWatch extends React.Component {
             </div>
           </div>
           <div className="row">
-            <div className="play-button">
+            <div className="button">
               <i onClick={this.handleClickPause} className="fas fa-pause"></i>
             </div>
           </div>

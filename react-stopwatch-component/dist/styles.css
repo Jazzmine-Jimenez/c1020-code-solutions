@@ -24,7 +24,6 @@ body {
   font-size: 3rem;
 }
 
-.play-button,
-.pause-button {
+.button {
   font-size: 2rem;
 }
