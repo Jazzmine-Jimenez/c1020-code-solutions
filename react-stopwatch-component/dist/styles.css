@@ -10,17 +10,16 @@ body {
 }
 
 .circle {
-  position: relative;
   width: 10rem;
   height: 10rem;
   border: 4px solid black;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .time {
-  position: absolute;
-  top: 3.2rem;
-  left: 3.7rem;
   font-size: 3rem;
 }
 
