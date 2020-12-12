@@ -8,14 +8,19 @@ class StopWatch extends React.Component {
     this.addASecond = this.addASecond.bind(this);
     this.handleClickPlay = this.handleClickPlay.bind(this);
     this.handleClickPause = this.handleClickPause.bind(this);
+    this.changeIcon = this.changeIcon.bind(this);
   }
 
   addASecond() {
     this.setState({ seconds: this.state.seconds + 1 });
   }
 
+  changeIcon() {
+    this.setState({ isTicking: !this.state.isTicking });
+  }
+
   handleClickPlay() {
-    this.setState({ isTicking: true });
+    this.changeIcon();
     this.timerID = setInterval(
       () => this.addASecond(),
       1000
@@ -23,18 +28,18 @@ class StopWatch extends React.Component {
   }
 
   handleClickPause() {
-    this.setState({ isTicking: false });
+    this.changeIcon();
     clearInterval(this.timerID);
   }
 
   render() {
-    if (!this.isTicking) {
+    if (!this.state.isTicking) {
       return (
         <div className="container">
           <div className="row">
             <div className="column-full">
               <div className="circle">
-                <div onClick={this.addASecond} className="time">{this.state.seconds}</div>
+                <div className="time">{this.state.seconds}</div>
               </div>
             </div>
           </div>
@@ -51,7 +56,7 @@ class StopWatch extends React.Component {
           <div className="row">
             <div className="column-full">
               <div className="circle">
-                <div onClick={this.addASecond} className="time">{this.state.seconds}</div>
+                <div className="time">{this.state.seconds}</div>
               </div>
             </div>
           </div>
