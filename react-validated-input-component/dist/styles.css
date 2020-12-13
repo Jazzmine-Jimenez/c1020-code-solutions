@@ -14,6 +14,12 @@ body {
   margin: 10px;
 }
 
+.check-icon{
+  font-size: 20px;
+  color: rgb(142, 224, 18);
+  margin: 10px;
+}
+
 .error-message {
   color: red;
 }

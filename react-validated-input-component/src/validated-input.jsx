@@ -38,6 +38,23 @@ export default class Validate extends React.Component {
           </form>
         </div>
       );
+    } else if (password.length > 8) {
+      return (
+        <div className="container">
+          <form onSubmit={this.handleSubmit}>
+            <label htmlFor="password"> Password: </label>
+            <div>
+              <input
+                id="password"
+                type="password"
+                value={this.state.password}
+                onChange={this.handleChange}
+              />
+              <i className="fas fa-check check-icon"></i>
+            </div>
+          </form>
+        </div>
+      );
     } else {
       return (
         <div className="container">
@@ -45,17 +62,17 @@ export default class Validate extends React.Component {
             <label htmlFor="password"> Password: </label>
             <div>
               <input
-                required
                 id="password"
                 type="password"
                 value={this.state.password}
                 onChange={this.handleChange}
               />
+              <i className="fas fa-times x-icon"></i>
+              <p className="error-message">Your password is too short.</p>
             </div>
           </form>
         </div>
       );
     }
-
   }
 }
