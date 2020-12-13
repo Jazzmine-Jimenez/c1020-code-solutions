@@ -3,7 +3,7 @@ import React from 'react';
 export default class Drawer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isDrawerOpen: true };
+    this.state = { isDrawerOpen: false };
     this.menuClick = this.menuClick.bind(this);
     this.changeView = this.changeView.bind(this);
   }
@@ -19,12 +19,12 @@ export default class Drawer extends React.Component {
   render() {
     if (this.state.isDrawerOpen) {
       return (
-        <div onClick={this.menuClick} className="container">
+        <div className="container">
           <div className="drawer">
             <div className="row">
               <div className="column-one-third">
                 <div className="menu-box">
-                  <div className="menu-items">
+                  <div onClick={this.menuClick} className="menu-items">
                     <h2>Menu</h2>
                     <h5>About</h5>
                     <h5>Get Started</h5>
@@ -32,7 +32,7 @@ export default class Drawer extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="column-two-third">
+              <div onClick={this.menuClick} className="column-two-third">
               </div>
             </div>
           </div>

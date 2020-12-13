@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+.menu-button {
+  font-size: 2rem;
+}
+
 .row {
   display: flex;
   position: absolute;
