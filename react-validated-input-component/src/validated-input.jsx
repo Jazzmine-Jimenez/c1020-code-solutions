@@ -60,7 +60,7 @@ export default class Validate extends React.Component {
     return element;
   }
 
-  lenghtMet() {
+  isLenghtMet() {
     const element = (
       <div className="container">
         <form>
@@ -89,7 +89,7 @@ export default class Validate extends React.Component {
       const submitError = this.submitError();
       return submitError;
     } else {
-      const lengthMet = this.lenghtMet();
+      const lengthMet = this.isLenghtMet();
       return lengthMet;
     }
   }
