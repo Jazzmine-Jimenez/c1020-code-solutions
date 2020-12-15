@@ -1,0 +1,36 @@
+.hidden {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.menu-button {
+  font-size: 2rem;
+}
+
+.row {
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.column-one-third {
+  width: 35%;
+  border: 2px solid black;
+  background-color: white;
+  position: relative;
+}
+
+.column-two-third {
+  width: 65%;
+  background-color: rgba(156, 155, 155, 0.623);
+}
+
+.menu-items {
+  margin: 2rem;
+}
