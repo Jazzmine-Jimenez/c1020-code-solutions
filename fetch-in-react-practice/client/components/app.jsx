@@ -39,8 +39,7 @@ export default class App extends React.Component {
       .then(newTodo => {
         const newTodosArray = this.state.todos.concat(newTodo);
         this.setState({
-          todos: newTodosArray,
-          isCompleted: false
+          todos: newTodosArray
         });
       });
     /**
