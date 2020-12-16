@@ -54,9 +54,10 @@ export default class App extends React.Component {
   }
 
   toggleCompleted(todoId) {
-    for (let i = 0; i < this.state.todos.length; i++) {
-      if (this.state.todos[i].todoId === todoId) {
-        const status = this.state.todos[i].isCompleted;
+    const todos = this.state.todos;
+    for (let i = 0; i < todos.length; i++) {
+      if (todos[i].todoId === todoId) {
+        const status = todos[i].isCompleted;
         const updatedStatus = {
           isCompleted: !status
         };
@@ -67,7 +68,13 @@ export default class App extends React.Component {
         })
           .then(res => res.json())
           .then(updatedData => {
-            const newTodosArray = this.state.todos.push(updatedData);
+            const newTodosArray = todos.map(todo => {
+              if (todo.todoId === todoId) {
+                return updatedData;
+              } else {
+                return todo;
+              }
+            });
             this.setState({
               todos: newTodosArray
             });
