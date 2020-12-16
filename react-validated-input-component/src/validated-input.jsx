@@ -8,8 +8,7 @@ export default class Validate extends React.Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
-    this.emptySubmit = this.emptySubmit.bind(this);
-    this.submitError = this.submitError.bind(this);
+    this.handleError = this.handleError.bind(this);
   }
 
   handleChange(event) {
@@ -18,46 +17,11 @@ export default class Validate extends React.Component {
     });
   }
 
-  emptySubmit() {
-    const element = (
-      <div className="container">
-        <form>
-          <label htmlFor="password"> Password: </label>
-          <div>
-            <input
-              id="password"
-              type="password"
-              value={this.state.password}
-              onChange={this.handleChange}
-            />
-            <i className="fas fa-times x-icon"></i>
-            <p className="error-message">Password is required</p>
-          </div>
-        </form>
-      </div>
-    );
-    return element;
-  }
-
-  submitError() {
-    const element = (
-      <div className="container">
-        <form>
-          <label htmlFor="password"> Password: </label>
-          <div>
-            <input
-              id="password"
-              type="password"
-              value={this.state.password}
-              onChange={this.handleChange}
-            />
-            <i className="fas fa-times x-icon"></i>
-            <p className="error-message">Your password is too short.</p>
-          </div>
-        </form>
-      </div>
-    );
-    return element;
+  handleError() {
+    if (this.state.password === '') {
+      return 'a password is required';
+    }
+    return 'Your password should be at least 8 characters long';
   }
 
   isLenghtMet() {
@@ -82,12 +46,24 @@ export default class Validate extends React.Component {
 
   render() {
     const password = this.state.password;
-    if (password === '') {
-      const errorElement = this.emptySubmit();
-      return errorElement;
-    } else if (password.length < 8) {
-      const submitError = this.submitError();
-      return submitError;
+    if (password === '' || password.length < 8) {
+      return (
+        <div className="container">
+          <form>
+            <label htmlFor="password"> Password: </label>
+            <div>
+              <input
+                id="password"
+                type="password"
+                value={this.state.password}
+                onChange={this.handleChange}
+              />
+              <i className="fas fa-times x-icon"></i>
+              <p className="error-message">{this.handleError()}</p>
+            </div>
+          </form>
+        </div>
+      );
     } else {
       const lengthMet = this.isLenghtMet();
       return lengthMet;
