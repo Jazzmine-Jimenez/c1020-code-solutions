@@ -32,15 +32,13 @@ app.post('/api/auth/sign-up', (req, res, next) => {
           returning "username", "userId", "createdAt"
       `;
 
-      db.query(sql, values)
-        .then(result => {
-          const newUser = result.rows[0];
-          res.status(200).json(newUser);
-        })
-        .catch(err => next(err));
+      return db.query(sql, values);
+    })
+    .then(result => {
+      const newUser = result.rows[0];
+      res.status(200).json(newUser);
     })
     .catch(err => next(err));
-
   /**
    * Hash the user's password with `argon2.hash()`
    * Then, 😉
