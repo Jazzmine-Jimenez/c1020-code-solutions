@@ -9,7 +9,7 @@ function authorizationMiddleware(req, res, next) {
     throw new ClientError(401, 'authentication required');
   } else {
     const payload = jwt.verify(xAccessToken, process.env.TOKEN_SECRET);
-    req.users = payload;
+    req.user = payload;
     next();
   }
 
