@@ -1,4 +1,25 @@
-For each feature in the application, describe the flow of the code in writing, including the client, server, and database. How does it work?
-User can sign up.
-User can sign in.
-User can stay signed in.
+For each feature in the application, describe the flow of the code in writing,
+including the client, server, and database. How does it work?
+
+User can sign up. (user credentials are stored)
+- Credentials are submitted by user
+- The client hashes the password
+- Client sends a POST request to the server
+- Server sends credentials to database
+- The database stores the username and hashed password
+
+
+
+User can sign in. (user identity is checked through database)
+- User inputs credentials
+- Client sends GET request for credentials
+- Server request stored credentials from database
+- Database sends back username and hasedPassword
+- Client recieves data and parses the hasedPassword
+- Client verifys that credentials match with the user input
+- Client request assinged an access token
+
+
+User can stay signed in. (granted access rights to client applications over HTTP)
+- Client verifys credentials
+- An acess token is sent with every HTTP server request
