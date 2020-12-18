@@ -1,0 +1,4 @@
+For each feature in the application, describe the flow of the code in writing, including the client, server, and database. How does it work?
+User can sign up.
+User can sign in.
+User can stay signed in.
