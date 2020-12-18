@@ -2,9 +2,14 @@ For each feature in the application, describe the flow of the code in writing,
 including the client, server, and database. How does it work?
 
 User can sign up. (user credentials are stored)
-- Credentials are submitted by user
+- page renders with the path "sign-in"
+- in the Auth Component it checks if the route is sign-in
+- Then goes to the Auth-form is where the credentials are submitted by user
+- The client sends the credentials to the server with a POST request
+
+
 - The client hashes the password
-- Client sends a POST request to the server
+
 - Server sends credentials to database
 - The database stores the username and hashed password
 
