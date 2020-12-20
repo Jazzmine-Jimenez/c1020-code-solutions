@@ -1,0 +1,38 @@
+For each feature in the application, describe the flow of the code in writing,
+including the client, server, and database. How does it work?
+
+User can sign up. (user credentials are stored)
+- Page renders with the path "sign-in"
+- In the Auth Component it checks if the route is sign-in
+- Then goes to the Auth-form to render the correct page
+- The user enters a username and password
+- The client sends the credentials to the server with a POST request
+- On submit the page gets rerendered to the sign-in page
+- The server gets the POST request and uses argon2.hash on the password
+- The server then sends the username and hasedPassword to the database
+- The database stores the username and hashed password
+
+
+
+User can sign in. (user identity is checked through database)
+- Sign-in page is rendered
+- User inputs their username and password and submits the form
+- The clinet sends a POST request with the credentials
+- the username and hashedPassword with the matching username is queried and returned
+- the server verifys the username and password(hashedPasswords) match
+- if they do then a token is made with jwt.sign
+- The server sends back the username, userId and a token
+- within the fetch function the result.user and result.token are checked for
+  truthy values
+- if they are they get sent to the handelSignIn method
+- A token for the user is stored in the local strorage and the state
+  is set to the user
+
+
+User can stay signed in. (granted access rights to client applications over HTTP)
+- A token for the user is stored in the local strorage and the state
+  is set to the user
+- The page renders and checks this.context.user
+- if the user exists the page is redirected to the home page
+- if state of the routh is an empty string the user has
+- The acess token is sent with every HTTP server request
